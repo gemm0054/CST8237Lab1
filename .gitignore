@@ -1,0 +1,14 @@
+# Ignore Unreal Engine build files and binaries
+UE4Lab1/Binaries/
+UE4Lab1/Intermediate/
+UE4Lab1/.vs/
+
+# Ignore Visual Studio build database files
+*.VC.db
+
+# Ignore Rider IDE files (if you are using Rider)
+UE4Lab1/Intermediate/ProjectFiles/.Rider/
+
+# Ignore all .pch (precompiled header) and .pdb (debug) files
+*.pch
+*.pdb
