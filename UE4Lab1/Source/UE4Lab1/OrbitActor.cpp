@@ -3,7 +3,7 @@
 
 #include "OrbitActor.h"
 
-S
+
 // Sets default values
 AOrbitActor::AOrbitActor()
 {
