@@ -16,15 +16,24 @@ public:
 	AMovingActor();
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
+	AActor* FirstPoint;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
+	AActor* SecondPoint;
+
 
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	void MoveToNextPoint();
+	//void MoveToNextPoint();
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	AActor* CurrentPoint;
+	
+	void MoveToNextPoint();
 };

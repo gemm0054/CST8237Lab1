@@ -16,7 +16,7 @@ void AMovingActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	void AMovingActor::MoveToNextPoint();
+	//void AMovingActor::MoveToNextPoint();
 	
 }
 

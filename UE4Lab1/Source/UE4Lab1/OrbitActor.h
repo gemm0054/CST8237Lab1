@@ -16,11 +16,25 @@ public:
 	AOrbitActor();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RotateAround")
-	float RotationSpeed;
+	AActor* RotateAroundActor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RotateAround")
+	float RotationSpeed = 50.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RotateAround")
+	FVector RotationRadius = FVector::ZeroVector;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RotateAround", meta = (ClampMin = "0.0", ClampMax = "360.0", UIMin = "0.0", UIMax = "360.0"))
+	float InitialRotationAngle = 0.f;
+
+	void Reset();
+	
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	float CurrentAngle = 0.f;
 
 public:
 	// Called every frame
