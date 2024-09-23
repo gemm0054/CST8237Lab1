@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "BaseActor.generated.h"
 
-UCLASS()
+UCLASS(abstract)
 class UE4LAB1_API ABaseActor : public AActor
 {
 	GENERATED_BODY()
@@ -14,6 +14,12 @@ class UE4LAB1_API ABaseActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABaseActor();
+
+	UPROPERTY(EditAnywhere, Category = "Actor Components")
+	class USceneComponent* ActorRootComponent;
+
+	UPROPERTY(EditAnywhere, Category = "Actor Components")
+	class UStaticMeshComponent* ActorMesh;
 
 protected:
 	// Called when the game starts or when spawned
