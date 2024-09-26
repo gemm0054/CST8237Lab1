@@ -15,11 +15,14 @@ public:
 	// Sets default values for this actor's properties
 	AMovingActor();
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
-	AActor* FirstPoint;
+	//UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
+	//AActor* FirstPoint;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
-	AActor* SecondPoint;
+	//UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Point")
+	//AActor* SecondPoint;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Movement Points")
+	TArray<AActor*> Points;
 
 
 
@@ -27,12 +30,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	//void MoveToNextPoint();
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	
+	int32 CurrentIndex;
 	AActor* CurrentPoint;
 	
 	void MoveToNextPoint();
